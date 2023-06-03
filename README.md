@@ -22,3 +22,7 @@ Note : Before Running the commands, run the command `Set-ExecutionPolicy -Scope 
 You will have to create a Firebase webapp. <br>
 You will have to create a Firestore database. <br>
 You will have to resolve all the permissions required to make Firebase and Firestore to work with the development server.  <br>
+
+# After setup instructions :
+
+Make sure you install this image : https://drive.google.com/file/d/12CvKAst6VdrApZAPfklOnQgbxsHtHpJw/view?usp=share_link into ./public/Images/banner copy.png
