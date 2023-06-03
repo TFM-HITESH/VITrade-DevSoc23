@@ -1,0 +1,46 @@
+.signupParentDiv {
+  border: 1px solid black;
+  width:420px;
+  height: 400px;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+}
+
+.signupParentDiv .input {
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  outline-color: transparent;
+  background-color:transparent;
+  position:absolute;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.signupParentDiv button {
+  position:relative;
+  left:50%;
+  transform: translateX(-50%);
+  margin-bottom: 5px;
+  width:50%;
+  /* border-color: transparent; */
+  background-color: #6699CC;
+  border-radius: 7px;
+  color: whitesmoke;
+  font-weight: 900;
+}
+.signupParentDiv button:hover {
+  background-color: white;
+  color: #002f34;
+  border: 2px solid #002f34;
+}
+
+.signupParentDiv a {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
