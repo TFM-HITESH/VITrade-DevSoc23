@@ -2,13 +2,14 @@ import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
 import 'firebase/compat/storage'
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBXCrOQOcoTxIF5Ze-5ShDw0R2fS0PExew",
-  authDomain: "testhp-d2c81.firebaseapp.com",
-  projectId: "testhp-d2c81",
-  storageBucket: "testhp-d2c81.appspot.com",
-  messagingSenderId: "933001689772",
-  appId: "1:933001689772:web:8ebc9856962097ad4cfd09"
+  apiKey: "AIzaSyBay9BHfBqPMIY-CxuJUbVPCGT3T6m_lLo",
+  authDomain: "vitrade-7d999.firebaseapp.com",
+  projectId: "vitrade-7d999",
+  storageBucket: "vitrade-7d999.appspot.com",
+  messagingSenderId: "312432847925",
+  appId: "1:312432847925:web:6e501c48490c0ebde4d57c"
 };
 
 //const analytics = getAnalytics(app);
