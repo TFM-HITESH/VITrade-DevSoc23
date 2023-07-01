@@ -70,6 +70,15 @@ You will have to resolve all the permissions required to make Firebase and Fires
 
 Make sure you install this image : https://drive.google.com/file/d/12CvKAst6VdrApZAPfklOnQgbxsHtHpJw/view?usp=share_link into ./public/Images/banner copy.png
 
+# Deployment :
+There is already a deployment running at https://vi-trade-dev-soc23.vercel.app/
+To run your own deployment follow the steps :
+
+1. Go to vercel and login. Follow all the steps till you are able to deploy using Github Deployment
+2. In the place to put the Github link, use the Repo link (same one which you used for cloning)
+3. In the special build commands, we need to update them by going to Install Command. Click on the override button and then paste this command in `npm install react@17.0.2 react-dom@17.0.2`
+4. Click on the Deploy Button, it will create the required deployment with Vercel Link
+
 
 # Screenshots of Implementation 
 
