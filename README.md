@@ -16,18 +16,21 @@ Note : Before Running the commands, run the command `Set-ExecutionPolicy -Scope 
 11. Run the commmand `firebase login`. Follow the steps to login.
 12. You will now have to change the project root file. So that firebase init hosting (next command) chooses the right project to deploy to.
 13. Create a new file at the root level called `.firebaserc`. In that, paste
-`{
+```
+{
   "projects": {
     "default": "testhp-d2c81" //use your own project ID here from Firebase
   }
-}`. Save this file
+}
+```
+. Save this file
 14. Run the command `firebase init hosting`. Use (y, Use existing project, Choose Project, public, n, n)
 15. Now to make 2 changes to handle Firebase logins and Firebase Image uploading.
 16. For firebase login, go to Build->Authentication. Choose Email and Password Authentication and Enable it.
 17. To create an image bucket (to store images), go to Build->Storage. Then create a new Storage Bucket. Buckets store data online in Firebase.
 18. Set it to Development Mode. DO NOT CHOOSE Production Mode. Copy paste and keep the Database rules.
 19. Once the bucket is created, go to Rules at the top and copy paste the rules into there :
-`
+```
 rules_version = '2';
 // Craft rules based on data in your Firestore database
 // allow write: if firestore.get(
@@ -48,16 +51,18 @@ service firebase.storage {
     }
   }
 }
-`
+```
 20. Go to firestore.rules file in VSCode and set the code to this :
-`rules_version = '2';
+```
+rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /{document=**} {
       allow read, write: if true;
     }
   }
-}`
+}
+```
 21. To run the local server, use the command `npm start`
 
 ## Some additional notes :
