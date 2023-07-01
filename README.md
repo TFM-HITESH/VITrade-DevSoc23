@@ -5,17 +5,60 @@
 3. Choose a file location and hit Enter.
 4. Delete .firebasesrc and firebase.json. These are unique for each system and need to be built from scratch
 5. Setup a Firebase project along with a Web-App in it. 
-6. As you are initialising the Web-App, make sure you update src\irebase\config.json with the new values specific to your webapp. 
+6. As you are initialising the Web-App, make sure you update src\firebase\config.json with the new values specific to your webapp. 
 
 Note : Before Running the commands, run the command `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`. This will make your VSCode Terminal have the same rights as Administrator. 
 
 7. To begin, run `npm install react@17.0.2 react-dom@17.0.2`
-8. Run `npm install bootstrap`
-9. Run `npm install firebase`
+8. Run `npm install bootstrap` (use `--force` if needed)
+9. Run `npm install firebase` (use `--force` if needed)
 10. Run `npm install -g firebase-tools`
-11. Run the commmand `firebase login`. Follow the steps to login. 
-12. Run the command `firebase init hosting`. Use (y, Use existing project, Choose Project, public, n, n)
-13. To run the local server, use the command `npm start`
+11. Run the commmand `firebase login`. Follow the steps to login.
+12. You will now have to change the project root file. So that firebase init hosting (next command) chooses the right project to deploy to.
+13. Create a new file at the root level called `.firebaserc`. In that, paste
+`{
+  "projects": {
+    "default": "testhp-d2c81" //use your own project ID here from Firebase
+  }
+}`. Save this file
+14. Run the command `firebase init hosting`. Use (y, Use existing project, Choose Project, public, n, n)
+15. Now to make 2 changes to handle Firebase logins and Firebase Image uploading.
+16. For firebase login, go to Build->Authentication. Choose Email and Password Authentication and Enable it.
+17. To create an image bucket (to store images), go to Build->Storage. Then create a new Storage Bucket. Buckets store data online in Firebase.
+18. Set it to Development Mode. DO NOT CHOOSE Production Mode. Copy paste and keep the Database rules.
+19. Once the bucket is created, go to Rules at the top and copy paste the rules into there :
+`
+rules_version = '2';
+// Craft rules based on data in your Firestore database
+// allow write: if firestore.get(
+// /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
+service firebase.storage {
+  match /b/{bucket}/o {
+    // This rule allows anyone with your Storage bucket reference to view, edit,
+    // and delete all data in your Storage bucket. It is useful for getting
+    // started, but it is configured to expire after 30 days because it
+    // leaves your app open to attackers. At that time, all client
+    // requests to your Storage bucket will be denied.
+    //
+    // Make sure to write security rules for your app before that time, or else
+    // all client requests to your Storage bucket will be denied until you Update
+    // your rules
+    match /{allPaths=**} {
+      allow read, write: if request.time < timestamp.date(2023, 7, 3);
+    }
+  }
+}
+`
+20. Go to firestore.rules file in VSCode and set the code to this :
+`rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}`
+21. To run the local server, use the command `npm start`
 
 ## Some additional notes :
 
