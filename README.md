@@ -1,5 +1,8 @@
 # Getting Started with build environment
 
+Figma Link : https://www.figma.com/file/e7o2h5bhfU1aCIph0oi9do/Untitled?type=design&node-id=0%3A1&t=I0weWiZkZrsuaOFg-1 \
+Google Drive Link : https://drive.google.com/drive/folders/1EkJ1aJM2zmWPFk_DFEinnjLJpS23otTJ?usp=sharing 
+
 1. Open VSCode. Make sure you have the `Github Pull Requests and Issues` Extension installed. Also make sure that you have Git installed : https://git-scm.com/downloads
 2. Use Ctrl + Shift + P and type in Git Clone. In the search bar, Paste the GitHub clone link of this repository.
 3. Choose a file location and hit Enter.
